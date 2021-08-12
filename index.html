@@ -51,19 +51,15 @@
             readCSV = function () {
                 var reader = new FileReader()
                 reader.onload = function () {
-                   const some = document.getElementById('display').innerHTML = reader.result
-                   
-                    var result = Object.values(some).filter(function(number) {
+                   const csvResult = document.getElementById('display').innerHTML = reader.result
+                    var result = Object.values(csvResult).filter(function(number) {
                         return number > 0
                     })
                     document.getElementById('outcome').innerHTML = result
-                  
-                   
                 }
-                
                 reader.readAsBinaryString(csvInput.files[0])
             }
-
+            
             csvInput.addEventListener('change', readCSV)
 
         </script>
